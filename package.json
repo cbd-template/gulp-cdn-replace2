@@ -11,6 +11,10 @@
     "cdn",
     "replace"
   ],
+	"repository": {
+    "type": "git",
+    "url": "git+https://github.com/cbd-template/gulp-cdn-replace2.git"
+  },
   "author": "skdream",
   "license": "ISC"
 }

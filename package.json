@@ -1,0 +1,16 @@
+{
+  "name": "gulp-cdn-replace2",
+  "version": "1.0.0",
+  "description": "替换html静态资源cdn路径",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "cdn",
+    "replace"
+  ],
+  "author": "skdream",
+  "license": "ISC"
+}

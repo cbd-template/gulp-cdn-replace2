@@ -1,6 +1,6 @@
 {
-  "name": "gulp-cdn-replace2",
-  "version": "1.0.0",
+  "name": "gulp-cdn-replacer",
+  "version": "1.0.1",
   "description": "替换html静态资源cdn路径",
   "main": "index.js",
   "scripts": {

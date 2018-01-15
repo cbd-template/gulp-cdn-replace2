@@ -55,7 +55,6 @@ module.exports = function(option) {
 
             var newUrl = url;
             files.some(function(item) {
-							console.log('item',item)
 							
 							//console.log('filename',filename)
                 var index = filename.lastIndexOf('.');

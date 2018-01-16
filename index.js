@@ -29,12 +29,9 @@ module.exports = function(option) {
     option = option || {};
     option.root = option.root || {};
     option.dir = option.dir || './dist';
-		
-		 var baseDir = option.baseDir ||  option.dir;
-    var prefix = option.prefix || 'http://js.chebada.com';
 
     function getNewUrl(url, ext, inline) {
-        var paths = url.split('/');		
+        var paths = url.split('/');
         var filename = paths.pop().split('?')[0];
         ext = ext || filename.split('.').pop();
 
@@ -44,23 +41,20 @@ module.exports = function(option) {
             prefix = option.root[ext] || '';
             prefix && (prefix[prefix.length - 1] === '/' || (prefix += '/'));
         }
-				
+
         paths.unshift(option.dir);
         var dir = path.resolve.apply(null, paths);
-				
+
         try {
             var files = fs.readdirSync(dir);
             // filename = filename.split('.');
 
-
             var newUrl = url;
             files.some(function(item) {
-							
-							//console.log('filename',filename)
                 var index = filename.lastIndexOf('.');
 
                 if (new RegExp('^' + filename.slice(0, index).replace(/\./g, '\\.') + '.*' + filename.slice(index).replace(/\./g, '\\.') + '$').test(item) ) {
-									
+
                     paths.shift();
                     //newUrl = prefix + paths.join('/') + '/' + item;
 									 newUrl =prefix + path.join(paths.join('/'),  item).split(path.sep).join('/');
@@ -78,7 +72,7 @@ module.exports = function(option) {
     }
 
     return through.obj(function(file, enc, fn) {
-			
+
 			  var fileDir = path.dirname(file.path);
         if (file.isNull()) return fn(null, file);
 
